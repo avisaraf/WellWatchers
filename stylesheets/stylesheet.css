@@ -77,6 +77,12 @@ h2 {
   background: url('../images/bg_hr.png') repeat-x bottom;
 }
 
+h2a {
+  padding-bottom: 10px;
+  font-size: 28px;
+  background: url('../images/bg_hr.png') repeat-x bottom;
+}
+
 h3 {
   font-size: 24px;
 }
