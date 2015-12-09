@@ -40,21 +40,31 @@
 <a id="analysis" class="anchor" href="#analysis" aria-hidden="true"><span class="octicon octicon-link"></span></a>Analysis</h1>
 
 <p>First, we performed some EDA to better understand the information that we were given.</p>
-<h3>Maps</h3>
-<img src="images/maps.png" alt="maps">
+<h3>Variables</h3>
+<p>We tried to determine whether any of the quantitative variables could serve as useful indicators for well status. We did the same for the categorical variables. We also found the pearson correlation coefficients for the feature variables to determine which most strongly correlated with the status of the wells.</p>
 <h3>Quantitative Variables</h3>
 <img src="images/quant_charts.png" alt="quant">
 <h3>Categorical Variables</h3>
 <img src="images/cat_charts_general.png" alt="cat">
-<h3>Funders</h3>
-<img src="images/wells_barchart.png" alt="gender">
-<p>Then, </p>
+<h3>Top Pearson Correlation coefficients</h3>
+<h3>Maps</h3>
+<p>We then visualized the data to see if there were any immediate connections between well status and other features. There was no immediate connection between funder and well status and the connection between quantity of water and well status was expected. However, some of the regions were strongly correlated or negatively correlated with functional well status. Specifically, the region Iringa seemed to do quite well, reinforced by the pearson correlation coefficient displayed above.</p>
+<img src="images/maps.png" alt="maps">
+<h3>Iringa</h3>
+We then took a closer look at the region Iringa. It seems to perform well because it is close to a body of water. We didn't use distance from water as one of our feature variables, but that could be an interesting add on to the project if given more time. 
+<img src="images/iringa_map.png" alt="iringa-map">
+<img src="images/cat_charts_iringa.png" alt="cat-iringa">
 
 <h1>
-<a id="Prediction" class="anchor" href="#prediction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Prediction</h1>
+<a id="prediction" class="anchor" href="#prediction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Prediction</h1>
 
 <h2>Models</h2>
-<h2>Regressions</h2>
+<h1>k-Nearest Neighbors</h1>
+<!--<img src="images/knn_fs.png" alt="knn">-->
+<h1>Naive Bayes</h1>
+<h1>SVM</h1>
+<h1>Random Forest</h1>
+<h1>Chart that summarizes models</h1>
 
       </section>
     </div>
