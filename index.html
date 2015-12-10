@@ -31,10 +31,9 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h1>
-<a id="overview" class="anchor" href="#overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>Overview</h1>
+        
 <h1>Video</h1>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/No4hdtZqBFk" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/yc79bXdXw24" frameborder="0" allowfullscreen></iframe>
 
 <h2>Motivation and Goals</h2>
 <h3>Why Water?</h3>
@@ -72,7 +71,7 @@ We then took a closer look at the region Iringa. It seems to perform well becaus
 <h1>
 <a id="prediction" class="anchor" href="#prediction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Predictions</h1>
 
-<h2>Sumary of Models</h2>
+<h2>Summary of Models</h2>
 <img src="images/models_flowchart.jpg" alt="models-flowchart">
 <img src="images/models_summary.png" alt="models-summary">
 
@@ -96,11 +95,15 @@ We then took a closer look at the region Iringa. It seems to perform well becaus
 <img src="images/svm_summary.jpg" alt="svm">
 
 <h3>Random Forest</h3>
-<p>Overview: </p>
-<p>Optimization: In Random Forest, we optimized for the number of trees to consider for the best split each time and optimized for the best number of features.</p>
-<p>Results: </p>
+<p>Overview: We decided to run a random forest, believing that this aggregate model could get us even higher prediction accuracies.</p>
+<p>Optimization: We optimized on the number of trees (n_estimators), the minimum number of samples required to split a node (min_samples_split, which also affects the max depth of the tree), and maximum number of features (max_features).</p>
+<p>Results: We got a final training accuracy of .90 and test accuracy of 0.80.</p>
 <img src="images/random_forest.png" alt="random-forest">
 
+<h3>Logistic Regression</h3>
+<p>Overview: We finally ran a multiclass logistic regression since we had 3 different options for our predictions.</p>
+<p>Optimization: We looked at both multinomial and one-vs-rest algorithms.</p>
+<p>Results: Both performed similarly, with a test set accuracy of 0.73 or 0.74.</p>
       </section>
     </div>
 
