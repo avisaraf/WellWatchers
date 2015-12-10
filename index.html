@@ -73,19 +73,26 @@ We then took a closer look at the region Iringa. It seems to perform well becaus
 <p>We had a few significant considerations before implementing our models. Firstly, our outcome variable had three different options: functional, functional needs repair, and non functional. Secondly, we had several features to select from. Finally, we had both quantitative and categorical predictor variables.</p>
 
 <h2>Sumary of Models</h2>
+<img src="images/models_flowchart" alt="models-flowchart">
+<img src="images/models_summary" alt="models-summary">
 
 <h3>k-Nearest Neighbors</h3>
 <p>Overview: We started with a kNN model to see if we could accurately predict wells given their similarities to other wells.</p> 
 <p>Optimization: We worked with a feature-selected set and tried to increase our prediction ability by playing around with various values of k.</p>
 <p>Results: Our best model was with k=5, but our accuracy was still low, so we tried Naive Bayes next.</p>
+<img src="images/knn_summary.jpg" alt="knn">
+
 <h3>Naive Bayes</h3>
 <p>Overview: Because we have a combination of categorical and continuous predictors, we first independently fit a Gaussian Naive Bayes model on the continuous data and a bernoulli Naive Bayes model on the categorical part.</p>
 <p>Optimization: We removed some redundant variables because Naive Bayes does not work well with highly correlated features and bucketed our quantitative variables into categorical ones to optimize the model.</p>
 <p>Results: The model still did not perform as well as the kNN model.</p>
+
 <h3>Linear SVM</h3>
 <p>Overview: Bearing in mind that we have a large sample size, we begin SVM classification by implementing a linear SVM, explicitly passing in the standard SVM hinge loss. We choose to begin here as the kernalized SVM training time that we will attempt later scales with the sample size, and we want to quickly classify on all features as a baseline.</p>
 <p>Optimization: We selected the most highly correlated features, balanced the set to include the same number of wells of each status group, and used a hinge squared loss function. After this showed little improvement, we implemented a RBF Kernelized SVM.</p>
 <p>Results: The model performed about as well as the kNN model.</p>
+<img src="images/svm_summary" alt="svm">
+
 <h3>Random Forest</h3>
 <p>Overview: </p>
 <p>Optimization: In Random Forest, we optimized for the number of trees to consider for the best split each time and optimized for the best number of features.</p>
