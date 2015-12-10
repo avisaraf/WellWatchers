@@ -34,7 +34,16 @@
         <h1>
 <a id="overview" class="anchor" href="#overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>Overview</h1>
 
-<p>We used a dataset from a Driven Data competition with <a href="http://taarifa.org/">Taarifa</a> and the <a href="http://maji.go.tz/">Tanzanian Ministry of Water</a> to try to predict the status of wells in Tanzania. The goal of this project was to better understand which waterpoints would fail based on data about all of the wells in the country so as to improve maintenance operations for the wells and proactively improve access to water across the country.   </p>
+<h2>Motivation and Goals</h2>
+<h3>Why Water?</h3>
+<p>As we've realized the importance of access to clean water on education, income, health, and female empowerment, nonprofit and governmental organizations alike have been increasingly targeting clean water issues in developing countries. Especially in the isolated rural areas of Tanzania, communities lose out when women spend a significant fraction of their time walking miles to collect water. To alleviate this problem, the aforementioned organizations have been building water pumps.</p>
+
+<p>We used a dataset from a Driven Data competition with <a href="http://taarifa.org/">Taarifa</a> and the <a href="http://maji.go.tz/">Tanzanian Ministry of Water</a> to try to predict the status of wells like this in Tanzania. The goal of this project was to better understand which waterpoints would fail based on data about all of the wells in the country so as to improve maintenance operations for the wells and proactively improve access to water across the country.</p>
+
+<h3>When Water Pumps Fail</h3>
+<p>Water pumps are not without their problems. Ideally, the water pumps would remain viable for the communities it serves for forever, but like all infrastructure, water pumps are prone to break down without proper maintenance. Hence, we would like to predict the status of a well status: is it functional, and if so, does it need repairs? What features are more important to determining the success of a well?</p>
+
+<p>To the best of our knowledge, while these organizations target the water shortages by building wells, not much effort is put into modeling the success of these wells and studying the data. As data scientists deeply interested in social impact and inspired by DrivenData's "Pump it Up: Data Mining the Water Table" competition, we set out to ask how we can better identify important predictors of a functional well.</p> 
 
 <h1>
 <a id="analysis" class="anchor" href="#analysis" aria-hidden="true"><span class="octicon octicon-link"></span></a>Analysis</h1>
@@ -61,12 +70,26 @@ We then took a closer look at the region Iringa. It seems to perform well becaus
 <a id="prediction" class="anchor" href="#prediction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Prediction</h1>
 
 <h2>Models</h2>
+<p>We had a few significant considerations before implementing our models. Firstly, our outcome variable had three different options: functional, functional needs repair, and non functional. Secondly, we had several features to select from. Finally, we had both quantitative and categorical predictor variables.</p>
+
+<h2>Sumary of Models</h2>
+
 <h3>k-Nearest Neighbors</h3>
-<!--<img src="images/knn_fs.png" alt="knn">-->
+<p>Overview: We started with a kNN model to see if we could accurately predict wells given their similarities to other wells.</p> 
+<p>Optimization: We worked with a feature-selected set and tried to increase our prediction ability by playing around with various values of k.</p>
+<p>Results: Our best model was with k=5, but our accuracy was still low, so we tried Naive Bayes next.</p>
 <h3>Naive Bayes</h3>
-<h3>SVM</h3>
+<p>Overview: Because we have a combination of categorical and continuous predictors, we first independently fit a Gaussian Naive Bayes model on the continuous data and a bernoulli Naive Bayes model on the categorical part.</p>
+<p>Optimization: We removed some redundant variables because Naive Bayes does not work well with highly correlated features and bucketed our quantitative variables into categorical ones to optimize the model.</p>
+<p>Results: The model still did not perform as well as the kNN model.</p>
+<h3>Linear SVM</h3>
+<p>Overview: Bearing in mind that we have a large sample size, we begin SVM classification by implementing a linear SVM, explicitly passing in the standard SVM hinge loss. We choose to begin here as the kernalized SVM training time that we will attempt later scales with the sample size, and we want to quickly classify on all features as a baseline.</p>
+<p>Optimization: We selected the most highly correlated features, balanced the set to include the same number of wells of each status group, and used a hinge squared loss function. After this showed little improvement, we implemented a RBF Kernelized SVM.</p>
+<p>Results: The model performed about as well as the kNN model.</p>
 <h3>Random Forest</h3>
-<h3>Chart that summarizes models</h3>
+<p>Overview: </p>
+<p>Optimization: In Random Forest, we optimized for the number of trees to consider for the best split each time and optimized for the best number of features.</p>
+<p>Results: </p>
 
       </section>
     </div>
