@@ -56,25 +56,24 @@
 <h3>Categorical Variables</h3>
 <img src="images/cat_charts_general.png" alt="cat">
 <h3>Top Pearson Correlation coefficients</h3>
+<img src="images/pearson_corr.jpg" alt="pearson">
 <h3>Maps</h3>
 <p>We then visualized the data to see if there were any immediate connections between well status and other features. There was no immediate connection between funder and well status and the connection between quantity of water and well status was expected. However, some of the regions were strongly correlated or negatively correlated with functional well status. Specifically, the region Iringa seemed to do quite well, reinforced by the pearson correlation coefficient displayed above.</p>
 <img src="images/maps.png" alt="maps">
+
 <h3>Iringa</h3>
 We then took a closer look at the region Iringa. It seems to perform well because it is close to a body of water. We didn't use distance from water as one of our feature variables, but that could be an interesting add on to the project if given more time. 
-<h3>Map of wells in Iringa</h3>
 <img src="images/iringa_map.png" alt="iringa-map">
 <h3>Categorical Variables for Iringa</h3>
 <img src="images/cat_charts_iringa.png" alt="cat-iringa">
 
-<h1>
-<a id="prediction" class="anchor" href="#prediction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Prediction</h1>
-
-<h2>Models</h2>
-<p>We had a few significant considerations before implementing our models. Firstly, our outcome variable had three different options: functional, functional needs repair, and non functional. Secondly, we had several features to select from. Finally, we had both quantitative and categorical predictor variables.</p>
+<a id="prediction" class="anchor" href="#prediction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Predictions</h1>
 
 <h2>Sumary of Models</h2>
 <img src="images/models_flowchart.jpeg" alt="models-flowchart">
 <img src="images/models_summary.jpg" alt="models-summary">
+
+<p>We had a few significant considerations before implementing our models. Firstly, our outcome variable had three different options: functional, functional needs repair, and non functional. Secondly, we had several features to select from. Finally, we had both quantitative and categorical predictor variables.</p>
 
 <h3>k-Nearest Neighbors</h3>
 <p>Overview: We started with a kNN model to see if we could accurately predict wells given their similarities to other wells.</p> 
