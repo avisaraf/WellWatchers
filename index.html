@@ -73,8 +73,8 @@ We then took a closer look at the region Iringa. It seems to perform well becaus
 <p>We had a few significant considerations before implementing our models. Firstly, our outcome variable had three different options: functional, functional needs repair, and non functional. Secondly, we had several features to select from. Finally, we had both quantitative and categorical predictor variables.</p>
 
 <h2>Sumary of Models</h2>
-<img src="images/models_flowchart" alt="models-flowchart">
-<img src="images/models_summary" alt="models-summary">
+<img src="images/models_flowchart.jpg" alt="models-flowchart">
+<img src="images/models_summary.jpg" alt="models-summary">
 
 <h3>k-Nearest Neighbors</h3>
 <p>Overview: We started with a kNN model to see if we could accurately predict wells given their similarities to other wells.</p> 
@@ -91,7 +91,7 @@ We then took a closer look at the region Iringa. It seems to perform well becaus
 <p>Overview: Bearing in mind that we have a large sample size, we begin SVM classification by implementing a linear SVM, explicitly passing in the standard SVM hinge loss. We choose to begin here as the kernalized SVM training time that we will attempt later scales with the sample size, and we want to quickly classify on all features as a baseline.</p>
 <p>Optimization: We selected the most highly correlated features, balanced the set to include the same number of wells of each status group, and used a hinge squared loss function. After this showed little improvement, we implemented a RBF Kernelized SVM.</p>
 <p>Results: The model performed about as well as the kNN model.</p>
-<img src="images/svm_summary" alt="svm">
+<img src="images/svm_summary.jpg" alt="svm">
 
 <h3>Random Forest</h3>
 <p>Overview: </p>
